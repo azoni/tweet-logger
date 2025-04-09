@@ -1,4 +1,5 @@
 from flask import Flask, request, jsonify # type: ignore
+from flask_cors import CORS # type: ignore
 from sqlalchemy import create_engine # type: ignore
 from sqlalchemy.orm import sessionmaker # type: ignore
 from models import Base, ChatLog
@@ -6,6 +7,7 @@ from config import DATABASE_URL
 import os
 
 app = Flask(__name__)
+CORS(app)
 
 engine = create_engine(DATABASE_URL)
 Base.metadata.create_all(engine)
