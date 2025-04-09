@@ -3,6 +3,7 @@ from sqlalchemy import create_engine # type: ignore
 from sqlalchemy.orm import sessionmaker # type: ignore
 from models import Base, ChatLog
 from config import DATABASE_URL
+import os
 
 app = Flask(__name__)
 
